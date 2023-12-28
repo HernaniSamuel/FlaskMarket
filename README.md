@@ -22,6 +22,10 @@
 <h2>Agradecimentos</h2>
 <p>Este projeto foi inspirado pelo tutorial do YouTube "<a href='https://www.youtube.com/watch?v=Qr4QMBUPxWo'>Flask Tutorial #1 - How to Make Websites with Python</a>", criado por JimShapedCoding. Agradecimentos especiais ao criador do tutorial por compartilhar conhecimentos valiosos sobre o desenvolvimento web com Flask.</p>
 
+<h2>Acesso</h2>
+<p>O website do projeto pode ser acessado <a href='https://flask-market-s9d9.onrender.com/'>aqui</a>.</p>
+
+
 <h2>Licença</h2>
 <p>O projeto é distribuído sob a licença MIT, conforme detalhado no arquivo <code>LICENSE</code>.</p>
 
