@@ -1,5 +1,5 @@
 <h1>FlaskMarket</h1>
-<p>Este projeto, FlaskMarket, é uma aplicação web desenvolvida em Flask, inspirada no tutorial do YouTube "<a href='https://www.youtube.com/watch?v=Qr4QMBUPxWo'>Flask Tutorial #1 - How to Make Websites with Python</a>". O FlaskMarket é um sistema de mercado online onde usuários podem comprar e vender itens.</p>
+<p>Este projeto, FlaskMarket, é uma aplicação web desenvolvida em Flask, inspirada no tutorial do YouTube "<a href='https://www.youtube.com/watch?v=Qr4QMBUPxWo'>Flask Tutorial #1 - How to Make Websites with Python</a>". O FlaskMarket é um sistema conceitual de mercado online onde usuários podem comprar e vender itens.</p>
 
 <h2>Descrição do Projeto</h2>
 <p>O FlaskMarket permite aos usuários se registrarem, fazerem login e interagirem com um sistema de mercado. Os usuários podem comprar itens disponíveis e vender itens que possuem. O projeto utiliza Flask, um microframework web em Python, e integra funcionalidades como autenticação de usuários, manipulação de banco de dados e renderização de templates.</p>
