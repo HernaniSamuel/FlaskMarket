@@ -1,0 +1,96 @@
+
+<!-- More Info -->
+<div class="modal fade" id="Modal-MoreInfo-{{ item.id }}"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">
+          <!-- -->
+          {{ item.name }}
+        </h5>
+        <button type="button" class="close"
+                data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">{{ item.description }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+                data-dismiss="modal">Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Purchase Confirm -->
+<div class="modal fade" id="Modal-PurchaseConfirm-{{ item.id }}"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">
+          <!-- -->
+          {{ item.name }}
+        </h5>
+        <button type="button" class="close"
+                data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">Are you sure you want to buy {{ item.name }} for {{ item.price }}$ ?</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+                data-dismiss="modal">Cancel
+        </button>
+        <form method="POST">
+          {{ formPurchase.hidden_tag() }}
+          <input id="purchased_item" name="purchased_item" type="hidden" value="{{ item.name }}">
+          {{ formPurchase.submit(class="btn btn-success btn-lg ") }}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sell Confirm -->
+<div class="modal fade" id="Modal-SellConfirm-{{ item.id }}"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">
+          <!-- -->
+          {{ item.name }}
+        </h5>
+        <button type="button" class="close"
+                data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">Are you sure you want to sell {{ item.name }} for {{ item.price }}$ ?</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+                data-dismiss="modal">Cancel
+        </button>
+        <form method="POST">
+          {{ formSell.hidden_tag() }}
+          <input id="selled_item" name="selled_item" type="hidden" value="{{ item.name }}">
+          {{ formSell.submit(class="btn btn-success btn-lg ") }}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
