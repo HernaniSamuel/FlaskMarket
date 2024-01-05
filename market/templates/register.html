@@ -7,20 +7,20 @@
   <div class="container">
     <form method="POST" class="form-register">
       {{ form.hidden_tag() }}
-      <h1>Sign Up!</h1>
+      <h1>Registrar conta</h1>
       {{ form.username.label() }}
-      {{ form.username(class="form-control", placeholder="User name") }}
+      {{ form.username(class="form-control", placeholder="Nome") }}
       {{ form.email_address.label() }}
-      {{ form.email_address(class="form-control", placeholder="Email Address") }}
+      {{ form.email_address(class="form-control", placeholder="Email") }}
       {{ form.password1.label() }}
-      {{ form.password1(class="form-control", placeholder="Password 1") }}
+      {{ form.password1(class="form-control", placeholder="Senha") }}
       {{ form.password2.label() }}
-      {{ form.password2(class="form-control", placeholder="Password 2") }}
+      {{ form.password2(class="form-control", placeholder="Confirmar senha") }}
       {{ form.submit(class="btn btn-primary btn-lg btn-block ") }}
 
       <div class="checkbox mb-3" style="text-align:center; margin-top:24px">
-        <h6>Already have an account?</h6>
-        <a class="btn btn-sm btn-secondary" href="{{ url_for('routes.login_page') }}">Register</a>
+        <h6>Já tem uma conta?</h6>
+        <a class="btn btn-sm btn-secondary" href="{{ url_for('routes.login_page') }}">Entrar</a>
       </div>
     </form>
   </div>

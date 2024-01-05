@@ -5,16 +5,16 @@ app = create_app()
 
 def add_product():
     with app.app_context():
-        print("Enter product details to add it to the database.")
-        name = input("Product Name: ")
-        price = int(input("Price: "))
-        barcode = input("Barcode: ")
-        description = input("Description: ")
+        print("Coloque os detalhes o produto para adiciona-lo ao banco de dados!")
+        name = input("Nome: ")
+        price = int(input("Preço: "))
+        barcode = input("Código de barras: ")
+        description = input("Descrição: ")
 
         new_item = Item(name=name, price=price, barcode=barcode, description=description)
         db.session.add(new_item)
         db.session.commit()
-        print(f"Product '{name}' added successfully!")
+        print(f"Product '{name}' adicionado com sucesso!")
 
 
 if __name__ == "__main__":

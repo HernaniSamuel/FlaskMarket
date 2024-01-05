@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -10,6 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
+      <link rel="icon" type="image/x-icon" href="images/favicon.ico">
       <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
@@ -19,18 +20,24 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('routes.home_page') }}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ url_for('routes.home_page') }}">Início <span class="sr-only">(current)</span></a>
             </li>
         </ul>
           {% if current_user.is_authenticated %}
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Welcome, {{ current_user.username }}!</a>
+                    <a class="nav-link" href="#">Bem-vindo(a), {{ current_user.username }}!</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{{ url_for('routes.logout_page') }}">Logout</a>
+                    <a class="nav-link" href="{{ url_for('routes.market_page') }}">Mercado</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ url_for('routes.owner_page') }}">Seus produtos</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ url_for('routes.logout_page') }}">Sair</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="color: lawngreen; font-weight: bold">
@@ -45,7 +52,7 @@
                     <a class="nav-link" href="{{ url_for('routes.login_page') }}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('routes.register_page') }}">Register</a>
+                    <a class="nav-link" href="{{ url_for('routes.register_page') }}">Registrar-se</a>
                 </li>
             </ul>
           {% endif %}

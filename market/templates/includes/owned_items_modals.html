@@ -1,4 +1,3 @@
-
 <!-- More Info -->
 <div class="modal fade" id="Modal-MoreInfo-{{ item.id }}"
      tabindex="-1"
@@ -27,8 +26,8 @@
   </div>
 </div>
 
-<!-- Purchase Confirm -->
-<div class="modal fade" id="Modal-PurchaseConfirm-{{ item.id }}"
+<!-- Sell Confirm -->
+<div class="modal fade" id="Modal-SellConfirm-{{ item.id }}"
      tabindex="-1"
      aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -44,7 +43,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p class="text-center">Você tem certeza que quer adiquirir {{ item.name }} por {{ item.price }}$ ?</p>
+        <p class="text-center">Você tem certeza que deseja se desfazer de {{ item.name }} por {{ item.price }}$ ?</p>
 
       </div>
       <div class="modal-footer">
@@ -52,9 +51,9 @@
                 data-dismiss="modal">Cancelar
         </button>
         <form method="POST">
-          {{ formPurchase.hidden_tag() }}
-          <input id="purchased_item" name="purchased_item" type="hidden" value="{{ item.name }}">
-          {{ formPurchase.submit(class="btn btn-success btn-lg ") }}
+          {{ formSell.hidden_tag() }}
+          <input id="sold_item" name="sold_item" type="hidden" value="{{ item.name }}">
+          {{ formSell.submit(class="btn btn-success btn-lg ") }}
         </form>
       </div>
     </div>

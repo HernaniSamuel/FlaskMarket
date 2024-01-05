@@ -6,14 +6,14 @@
       {{ form.hidden_tag() }}
       <h1>Login</h1>
       {{ form.username.label() }}
-      {{ form.username(class="form-control", placeholder="User name") }}
+      {{ form.username(class="form-control", placeholder="Usuário") }}
       {{ form.password.label() }}
-      {{ form.password(class="form-control", placeholder="Password") }}
+      {{ form.password(class="form-control", placeholder="Senha") }}
       {{ form.submit(class="btn btn-primary btn-lg btn-block ") }}
 
       <div class="checkbox mb-3" style="text-align:center; margin-top:24px">
-        <h6>Do not have an account?</h6>
-        <a class="btn btn-sm btn-secondary" href="{{ url_for('routes.register_page') }}">Register</a>
+        <h6>Não tem uma conta?</h6>
+        <a class="btn btn-sm btn-secondary" href="{{ url_for('routes.register_page') }}">Registrar</a>
       </div>
 
 
