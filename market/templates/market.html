@@ -1,33 +1,23 @@
 {% extends 'base.html' %}
 {% block title %}Market{% endblock %}
- {% block content %}
-    <div class="row" style="margin-top:20px;margin-left:20px;">
-            <h2 style="margin:24px auto; text-transform:uppercase;">Produtos à venda</h2>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                      <th scope="col">Id</th>
-                      <th scope="col">Nome</th>
-                      <th scope="col">Código de barras</th>
-                      <th scope="col">Preço</th>
-                      <th scope="col">Opções</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item in items %}
-                    <tr>
-                        <th scope="row">{{ item.id }}</th>
-                        <td>{{ item.name }}</td>
-                        <td>{{ item.barcode }}</td>
-                        <td>R${{ item.price }}</td>
-                        <td>
-                          <button class="btn btn-outline btn-info" data-toggle="modal" data-target="#Modal-MoreInfo-{{ item.id }}">Descrição</button>
-                          <button class="btn btn-outline btn-success" data-toggle="modal" data-target="#Modal-PurchaseConfirm-{{ item.id }}">Comprar</button>
-                        </td>
-                    </tr>
-                    {% include 'includes/items_modals.html' %}
-                    {% endfor %}
-                </tbody>
-            </table>
+{% block content %}
+    <h2 style="margin:24px 0px; text-align:center; text-transform:uppercase;">Produtos a venda</h2>
+    <div class="products-container">
+        {% for item in items %}
+        <div class="product-container">
+            <h3>{{ item.name }}</h3>
+            <p>ID: {{ item.id }}</p>
+            <p>Código de barras: {{ item.barcode }}</p>
+            <p>Custa US${{ item.price }}</p>
+
+            <div class="buttons">
+                <button class="btn btn-outline btn-info" data-toggle="modal" data-target="#Modal-MoreInfo-{{ item.id }}">Descrição</button>
+                <button class="btn btn-outline btn-success" data-toggle="modal" data-target="#Modal-PurchaseConfirm-{{ item.id }}">Comprar</button>
+            </div>
+
+        </div>
+
+        {% include 'includes/items_modals.html' %}
+        {% endfor %}
     </div>
 {% endblock %}

@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationError
+from wtforms import StringField, PasswordField, SubmitField, FloatField
+from wtforms.widgets import PasswordInput
+from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationError, NumberRange
 from .models import User
 
 
@@ -26,7 +27,7 @@ class RegisterForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     username = StringField(label='Nome', validators=[DataRequired()])
-    password = StringField(label='Senha', validators=[DataRequired()])
+    password = StringField(label='Senha', widget=PasswordInput(hide_value=False), validators=[DataRequired()])
     submit = SubmitField(label='Entrar!')
 
 
@@ -36,3 +37,8 @@ class PurchaseItemForm(FlaskForm):
 
 class SellItemForm(FlaskForm):
     submit = SubmitField(label='Vender agora!')
+
+
+class AdicionaForm(FlaskForm):
+    quantia = FloatField(label='Quantia', validators=[DataRequired(), NumberRange(min=1)])
+    submit = SubmitField(label='Adicionar')

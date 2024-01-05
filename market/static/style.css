@@ -1,0 +1,29 @@
+.products-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-container{
+    border:1px solid blue;
+    border-radius: 5px;
+    padding: 10px;
+    margin:10px;
+
+    max-width: fit-content;
+}
+
+.product-container > h3{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.product-container > p{
+    margin: 24px 12px;
+}
+
+.product-container > .buttons{
+    text-align: center;
+    margin:12px;
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Adicionar dinheiro {% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <form method="POST" class="form-register">
+      {{ form.hidden_tag() }}
+      <h1>Adicionar dinheiro</h1>
+      {{ form.quantia.label() }}
+      {{ form.quantia(class="form-control", placeholder="Quantia a ser adicionada") }}
+      {{ form.submit(class="btn btn-primary btn-lg btn-block ") }}
+    </form>
+  </div>
+<style>
+  .form-control { margin-bottom:24px; }
+  .btn btn-primary { margin: auto; }
+  h1 { text-align:center; margin-top:12px; }
+</style>
+{% endblock %}

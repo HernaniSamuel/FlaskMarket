@@ -1,6 +1,6 @@
 from market.models import Item, User
 from flask import render_template, Blueprint, redirect, url_for, flash, request
-from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm
+from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm, AdicionaForm
 from . import db
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -68,6 +68,22 @@ def register_page():
 
     return render_template('register.html', form=form, current_user=current_user)
 
+
+@routes.route("/adicionar-saldo", methods=['GET', 'POST'])
+@login_required
+def adicionar_saldo_page():
+    adiciona_form = AdicionaForm()
+
+    if request.method == 'POST':
+        valor_adicao = request.form.get('quantia')
+        try:
+            current_user.budget += float(valor_adicao)
+            db.session.commit()
+            return redirect(url_for('routes.market_page'))
+        except:
+            flash("Erro ao adicionar quantia! Vírgulas ou letras não são aceitas! Coloque . em vez de ,", category='danger')
+
+    return render_template('adiciona.html', current_user=current_user, form=adiciona_form)
 
 @routes.route("/login", methods=['GET', 'POST'])
 def login_page():

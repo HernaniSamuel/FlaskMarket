@@ -10,7 +10,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-      <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+      <link rel="stylesheet" href="../static/style.css">
       <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
@@ -28,7 +30,7 @@
           {% if current_user.is_authenticated %}
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Bem-vindo(a), {{ current_user.username }}!</a>
+                    <a class="nav-link" href="{{ url_for('routes.adicionar_saldo_page') }}">Adicionar dinheiro</a>
                 </li>
                 <li>
                     <a class="nav-link" href="{{ url_for('routes.market_page') }}">Mercado</a>
